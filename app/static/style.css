@@ -1,62 +1,82 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  min-height: 100%;
+  /* Autres styles */
+}
+
+.navbar, .footer, .section {
+  margin: 0;
+  border: none;
+  /* Autres styles */
+}
+
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
   }
-  
-  .container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-  }
-  
-  header {
-    background: #50b3a2;
-    color: white;
-    padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #e8491d 3px solid;
-  }
-  
-  header a {
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-  }
-  
-  header ul {
-    padding: 0;
-    list-style: none;
-  }
-  
-  header ul li {
-    float: left;
-    display: inline;
-    padding: 0 20px 0 20px;
-  }
-  
-  header #branding {
-    float: left;
-  }
-  
-  header #branding h1 {
-    margin: 0;
-  }
-  
-  header nav {
-    float: right;
-    margin-top: 10px;
-  }
-  
-  header .highlight, header .current a {
-    color: #e8491d;
-    font-weight: bold;
-  }
-  
-  header a:hover {
-    color: #ffffff;
-    font-weight: bold;
-  }
-  
+  .header-container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), inset 7px 7px 4px -5px rgba(255, 255, 255, 0.03), inset -7px -7px 4px -5px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    justify-content: space-between;
+}
+
+.container-shrine {
+  min-height: 100dvh;
+  background-image: url(https://cdn.discordapp.com/attachments/1082443320581689374/1107998073931694080/The_Dojo.gif);
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-color: rgb(17, 17, 17);
+  font-family: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Cantarell,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
+  position: relative;
+  z-index: 0;
+  padding: 120px 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
+.section {
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  padding: 35px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5), inset 7px 7px 4px -5px rgba(255, 255, 255, 0.03), inset -7px -7px 4px -5px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  box-sizing: border-box;
+  width: 90%;
+  height: 90%;
+}

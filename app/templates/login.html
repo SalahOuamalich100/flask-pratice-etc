@@ -1,0 +1,60 @@
+<!-- templates/login.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+      <h1 class="title">Login</h1>
+      <div class="columns is-centered">
+        <div class="column is-half">
+          <form id="login-form" method="post">
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="email" name="email" placeholder="Email" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">passs</label>
+              <div class="control">
+                <input class="input" type="password" name="password" placeholder="pass" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <button class="button is-link" type="submit">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var form = event.target;
+      var data = new FormData(form);
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/login');
+      xhr.onload = function() {
+        if (xhr.status === 200) {
+          window.location.href = '/';
+        } else {
+          try {
+            var resp = JSON.parse(xhr.responseText);
+            console.log(resp.message);
+            if (resp.error) {
+              alert(resp.message);
+            } else {
+              alert(resp.message);
+            }
+          } catch (e) {
+            alert(resp.message);
+          }
+        }
+      };
+      xhr.send(data);
+    });
+  </script>
+  
+{% endblock %}
